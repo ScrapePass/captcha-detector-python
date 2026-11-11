@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captcha-detector"
+version = "1.0.1"
+description = "Does this web page have a captcha? Detects 69 captcha and bot-check products (reCAPTCHA, hCaptcha, Turnstile, DataDome, PerimeterX...) in HTML, scraper API results, Playwright and Selenium. Zero dependencies."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "ScrapePass" }]
+requires-python = ">=3.8"
+keywords = ["captcha", "captcha-detection", "recaptcha", "hcaptcha", "turnstile", "cloudflare", "bot-detection", "web-scraping", "playwright", "selenium", "datadome"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[project.optional-dependencies]
+playwright = ["playwright>=1.30"]
+selenium = ["selenium>=4"]
+
+[project.urls]
+Homepage = "https://github.com/ScrapePass/captcha-detector-python"
+Source = "https://github.com/ScrapePass/captcha-detector-python"
+Issues = "https://github.com/ScrapePass/captcha-detector-python/issues"
+JavaScript = "https://github.com/ScrapePass/captcha-detector"
+
+[project.scripts]
+captcha-detector = "captcha_detector.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+captcha_detector = ["signatures.json", "captcha-detector.js"]

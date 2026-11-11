@@ -1,0 +1,3319 @@
+{
+ "version": "1.0.0",
+ "signatures": [
+  {
+   "id": "recaptcha",
+   "name": "reCAPTCHA",
+   "vendor": "Google",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://developers.google.com/recaptcha",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\b(?:google\\.com|recaptcha\\.net)\\/recaptcha\\/(?:api|enterprise)\\.js",
+     "flags": "i"
+    },
+    {
+     "re": "\\bgstatic\\.(?:com|cn)\\/recaptcha\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\b(?:google\\.com|recaptcha\\.net)\\/recaptcha\\/(?:api2|enterprise)\\/(?:reload|userverify|clr|webworker)",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\b(?:google\\.com|recaptcha\\.net)\\/recaptcha\\/(?:api2|enterprise)\\/(?:anchor|bframe)",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".g-recaptcha"
+    },
+    {
+     "sel": "#g-recaptcha"
+    },
+    {
+     "sel": ".grecaptcha-badge"
+    },
+    {
+     "sel": "textarea[name=\"g-recaptcha-response\"]",
+     "w": 0.7
+    },
+    {
+     "sel": "iframe[title=\"reCAPTCHA\"]",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bgrecaptcha\\.(?:execute|render|ready|enterprise)\\b",
+     "flags": "",
+     "w": 0.75
+    }
+   ]
+  },
+  {
+   "id": "hcaptcha",
+   "name": "hCaptcha",
+   "vendor": "Intuition Machines",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://www.hcaptcha.com",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\b(?:js|api|api2|newassets|assets|imgs\\d*)\\.hcaptcha\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\/\\/hcaptcha\\.com\\/1\\/(?:secure-)?api\\.js",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bhcaptcha\\.com\\/captcha\\/v1\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\b(?:new)?assets\\.hcaptcha\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".h-captcha"
+    },
+    {
+     "sel": "textarea[name=\"h-captcha-response\"]"
+    },
+    {
+     "sel": "[data-hcaptcha-widget-id]"
+    },
+    {
+     "sel": "iframe[title*=\"hCaptcha\" i]",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bhcaptcha\\.(?:execute|render)\\s*\\(",
+     "flags": "",
+     "w": 0.75
+    }
+   ]
+  },
+  {
+   "id": "turnstile",
+   "name": "Turnstile",
+   "vendor": "Cloudflare",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://www.cloudflare.com/products/turnstile/",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bchallenges\\.cloudflare\\.com\\/turnstile\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bchallenges\\.cloudflare\\.com\\/cdn-cgi\\/challenge-platform\\/[^?#]*turnstile",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".cf-turnstile"
+    },
+    {
+     "sel": "input[name=\"cf-turnstile-response\"]"
+    },
+    {
+     "sel": "[id^=\"cf-chl-widget-\"]",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bturnstile\\.(?:render|execute)\\s*\\(",
+     "flags": "",
+     "w": 0.75
+    }
+   ]
+  },
+  {
+   "id": "arkose",
+   "name": "Arkose Labs (FunCaptcha)",
+   "vendor": "Arkose Labs",
+   "kind": "widget",
+   "subtype": "puzzle",
+   "site": "https://www.arkoselabs.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\barkoselabs\\.[a-z0-9.-]+\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bfuncaptcha\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\/fc\\/(?:api|gc|gt2|gfct|ca)\\/",
+     "flags": "i",
+     "w": 0.7
+    },
+    {
+     "re": "\\/v2\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/api\\.js",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\barkoselabs\\.[a-z0-9.-]+\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bfuncaptcha\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\/fc\\/(?:gc|assets)\\/",
+     "flags": "i",
+     "w": 0.75
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#FunCaptcha"
+    },
+    {
+     "sel": "#funcaptcha"
+    },
+    {
+     "sel": "#arkose"
+    },
+    {
+     "sel": "#arkoseFrame"
+    },
+    {
+     "sel": "#arkose-iframe"
+    },
+    {
+     "sel": "#enforcementFrame"
+    },
+    {
+     "sel": "iframe[data-e2e=\"enforcement-frame\"]"
+    },
+    {
+     "sel": "input[name=\"fc-token\"]"
+    },
+    {
+     "sel": "#fc-token"
+    },
+    {
+     "sel": "iframe[title*=\"arkose\" i]",
+     "w": 0.9
+    },
+    {
+     "sel": "[data-pkey]",
+     "w": 0.6
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bArkoseEnforcement\\b|\\bsetupEnforcement\\b|\\barkoseLabsClientApi",
+     "flags": "",
+     "w": 0.75
+    }
+   ]
+  },
+  {
+   "id": "geetest",
+   "name": "GeeTest",
+   "vendor": "GeeTest",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://www.geetest.com",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\b(?:static|api|apiv6|gcaptcha4|monitor)\\.geetest\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bgeetest\\.com\\/(?:static|v4)\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bgeevisit\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bgt4?(?:\\.min)?\\.js\\b",
+     "flags": "i",
+     "w": 0.4
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bgeetest\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".geetest_holder"
+    },
+    {
+     "sel": ".geetest_panel"
+    },
+    {
+     "sel": ".geetest_widget"
+    },
+    {
+     "sel": ".geetest_radar"
+    },
+    {
+     "sel": ".geetest_btn"
+    },
+    {
+     "sel": ".geetest_box"
+    },
+    {
+     "sel": ".geetest_captcha"
+    },
+    {
+     "sel": ".geetest_popup_wrap"
+    },
+    {
+     "sel": "input[name=\"geetest_challenge\"]"
+    },
+    {
+     "sel": "input[name=\"geetest_validate\"]"
+    },
+    {
+     "sel": "input[name=\"geetest_seccode\"]"
+    },
+    {
+     "sel": "[class*=\"geetest_\"]",
+     "w": 0.8
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\binitGeetest4?\\s*\\(",
+     "flags": ""
+    }
+   ]
+  },
+  {
+   "id": "aws-waf",
+   "name": "AWS WAF CAPTCHA",
+   "vendor": "Amazon Web Services",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha-and-challenge.html",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\.(?:token|captcha|edge\\.sdk|edge\\.captcha-sdk)\\.awswaf\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bawswaf\\.com\\/",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bawswaf\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "awswaf-captcha"
+    },
+    {
+     "sel": "#captcha-container",
+     "w": 0.35
+    },
+    {
+     "sel": "#amzn-captcha-verify-button",
+     "w": 0.8
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bgokuProps\\b",
+     "flags": "",
+     "w": 0.85
+    },
+    {
+     "re": "AwsWafCaptcha\\.renderCaptcha",
+     "flags": "",
+     "w": 0.95
+    },
+    {
+     "re": "\\bAwsWafIntegration\\b",
+     "flags": "",
+     "w": 0.6
+    }
+   ],
+   "text": [
+    {
+     "re": "let(?:'|’)s confirm you are human",
+     "flags": "i"
+    },
+    {
+     "re": "to continue,? please confirm you(?:'|’)re a human",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "headers": [
+    {
+     "name": "x-amzn-waf-action",
+     "re": "captcha|challenge",
+     "flags": "i",
+     "w": 0.95
+    }
+   ]
+  },
+  {
+   "id": "friendly-captcha",
+   "name": "Friendly Captcha",
+   "vendor": "Friendly Captcha",
+   "kind": "widget",
+   "subtype": "proof-of-work",
+   "site": "https://friendlycaptcha.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bfriendly-challenge\\b",
+     "flags": "i"
+    },
+    {
+     "re": "@friendlycaptcha\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\b(?:api|eu-api|global\\.frcapi)\\.friendlycaptcha\\.(?:com|eu)\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bfrcapi\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".frc-captcha"
+    },
+    {
+     "sel": "input[name=\"frc-captcha-solution\"]"
+    },
+    {
+     "sel": "input[name=\"frc-captcha-response\"]"
+    },
+    {
+     "sel": "frc-captcha"
+    }
+   ]
+  },
+  {
+   "id": "mtcaptcha",
+   "name": "MTCaptcha",
+   "vendor": "MTCaptcha",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://www.mtcaptcha.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bservice2?\\.mtcaptcha\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bservice2?\\.mtcaptcha\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".mtcaptcha"
+    },
+    {
+     "sel": "input[name=\"mtcaptcha-verifiedtoken\"]"
+    },
+    {
+     "sel": "[id^=\"mtcaptcha\"]",
+     "w": 0.8
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bmtcaptchaConfig\\b",
+     "flags": "",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "yandex-smartcaptcha",
+   "name": "Yandex SmartCaptcha",
+   "vendor": "Yandex",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://yandex.cloud/en/services/smartcaptcha",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bsmartcaptcha\\.(?:yandexcloud\\.net|cloud\\.yandex\\.(?:ru|net|com))\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bsmartcaptcha\\.(?:yandexcloud\\.net|cloud\\.yandex\\.(?:ru|net|com))\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".smart-captcha"
+    },
+    {
+     "sel": "input[name=\"smart-token\"]"
+    }
+   ]
+  },
+  {
+   "id": "tencent-captcha",
+   "name": "Tencent Captcha (TCaptcha)",
+   "vendor": "Tencent",
+   "kind": "widget",
+   "subtype": "slider",
+   "site": "https://cloud.tencent.com/product/captcha",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\b(?:ssl\\.|t\\.)?captcha\\.qq\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bturing\\.captcha\\.(?:qcloud|gtimg)\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bcaptcha\\.gtimg\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bTCaptcha(?:-global)?\\.js",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bcaptcha\\.qq\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bturing\\.captcha\\.(?:qcloud|gtimg)\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#tcaptcha_transform"
+    },
+    {
+     "sel": "#tcaptcha_iframe"
+    },
+    {
+     "sel": "#tcaptcha_iframe_dy"
+    },
+    {
+     "sel": "[id^=\"tcaptcha\"]",
+     "w": 0.85
+    },
+    {
+     "sel": ".tcaptcha-transform"
+    }
+   ]
+  },
+  {
+   "id": "aliyun-captcha",
+   "name": "Alibaba Cloud Captcha",
+   "vendor": "Alibaba",
+   "kind": "widget",
+   "subtype": "slider",
+   "site": "https://www.alibabacloud.com/product/captcha",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "aliyunCaptcha\\/AliyunCaptcha\\.js",
+     "flags": "i"
+    },
+    {
+     "re": "\\bcaptcha-open(?:-[a-z]+)?\\.aliyuncs\\.com",
+     "flags": "i"
+    },
+    {
+     "re": "\\bcf\\.aliyun\\.com\\/nocaptcha",
+     "flags": "i"
+    },
+    {
+     "re": "\\bg\\.alicdn\\.com\\/AWSC\\/",
+     "flags": "i",
+     "w": 0.7
+    },
+    {
+     "re": "\\b[a-z]\\.alicdn\\.com\\/captcha-frontend\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#nc_1_wrapper"
+    },
+    {
+     "sel": ".nc-container"
+    },
+    {
+     "sel": ".nc_wrapper"
+    },
+    {
+     "sel": ".nc_scale"
+    },
+    {
+     "sel": "#aliyunCaptcha-window-popup"
+    },
+    {
+     "sel": "#aliyunCaptcha-sliding-wrapper"
+    },
+    {
+     "sel": "[id^=\"aliyunCaptcha\"]",
+     "w": 0.9
+    },
+    {
+     "sel": "#nocaptcha",
+     "w": 0.75
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\/_____tmd_____\\/punish",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "text": [
+    {
+     "re": "请按住滑块，?拖动到最右边|please slide to verify",
+     "flags": "i",
+     "w": 0.8,
+     "any": true
+    }
+   ]
+  },
+  {
+   "id": "netease-yidun",
+   "name": "NetEase Yidun",
+   "vendor": "NetEase",
+   "kind": "widget",
+   "subtype": "slider",
+   "site": "https://dun.163.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bcstaticdun\\.126\\.net\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\b(?:c|cstatic|webzjcaptcha)\\.dun\\.163(?:yun)?\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".yidun_slider"
+    },
+    {
+     "sel": ".yidun_panel"
+    },
+    {
+     "sel": ".yidun_popup"
+    },
+    {
+     "sel": ".yidun",
+     "w": 0.85
+    }
+   ]
+  },
+  {
+   "id": "dingxiang",
+   "name": "Dingxiang Captcha",
+   "vendor": "Dingxiang",
+   "kind": "widget",
+   "subtype": "slider",
+   "site": "https://www.dingxiang-inc.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bdingxiang-inc\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".dx_captcha"
+    },
+    {
+     "sel": "[class*=\"dx_captcha\"]",
+     "w": 0.85
+    }
+   ]
+  },
+  {
+   "id": "shumei",
+   "name": "Shumei Captcha",
+   "vendor": "Shumei",
+   "kind": "widget",
+   "subtype": "slider",
+   "site": "https://www.ishumei.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bcastatic\\.fengkongcloud\\.(?:com|cn)\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bsmcp(?:\\.min)?\\.js",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "\\bfengkongcloud\\.(?:com|cn)\\/",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".shumei_captcha_wrapper"
+    },
+    {
+     "sel": "[class*=\"shumei_captcha\"]",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "vaptcha",
+   "name": "VAPTCHA",
+   "vendor": "VAPTCHA",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://www.vaptcha.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bvaptcha\\.(?:com|net)\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".vaptcha-container"
+    },
+    {
+     "sel": "#vaptchaContainer"
+    },
+    {
+     "sel": "[data-vaptcha]"
+    }
+   ]
+  },
+  {
+   "id": "luosimao",
+   "name": "Luosimao Captcha",
+   "vendor": "Luosimao",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://luosimao.com/service/captcha",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bcaptcha\\.luosimao\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bcaptcha\\.luosimao\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".l-captcha"
+    },
+    {
+     "sel": "input[name=\"luotest_response\"]"
+    }
+   ]
+  },
+  {
+   "id": "lemin",
+   "name": "Lemin Captcha",
+   "vendor": "Lemin",
+   "kind": "widget",
+   "subtype": "puzzle",
+   "site": "https://www.leminnow.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\b(?:api\\.)?leminnow\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#lemin-cropped-captcha"
+    },
+    {
+     "sel": "[id^=\"lemin-cropped-captcha\"]",
+     "w": 0.9
+    },
+    {
+     "sel": "input[name=\"lemin_challenge_id\"]"
+    },
+    {
+     "sel": "input[name=\"lemin_answer\"]"
+    }
+   ]
+  },
+  {
+   "id": "captchafox",
+   "name": "CaptchaFox",
+   "vendor": "CaptchaFox",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://captchafox.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\b(?:cdn|api|s)\\.captchafox\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "@captchafox\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bcaptchafox\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".captchafox"
+    },
+    {
+     "sel": "[data-captchafox-sitekey]",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "procaptcha",
+   "name": "Procaptcha",
+   "vendor": "Prosopo",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://prosopo.io",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bjs\\.prosopo\\.io\\/",
+     "flags": "i"
+    },
+    {
+     "re": "@prosopo\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bprocaptcha(?:\\.bundle)?\\.js",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".procaptcha"
+    },
+    {
+     "sel": "input[name=\"procaptcha-response\"]"
+    }
+   ]
+  },
+  {
+   "id": "keycaptcha",
+   "name": "KeyCAPTCHA",
+   "vendor": "KeyCAPTCHA",
+   "kind": "widget",
+   "subtype": "puzzle",
+   "site": "https://www.keycaptcha.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bkeycaptcha\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#div_for_keycaptcha"
+    },
+    {
+     "sel": "[id*=\"keycaptcha\" i]",
+     "w": 0.8
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bs_s_c_(?:user_id|session_id|web_server_sign)\\b",
+     "flags": ""
+    }
+   ]
+  },
+  {
+   "id": "capy",
+   "name": "Capy Puzzle CAPTCHA",
+   "vendor": "Capy",
+   "kind": "widget",
+   "subtype": "puzzle",
+   "site": "https://www.capy.me",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bcapy\\.me\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bcapy\\.me\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".capy-captcha"
+    },
+    {
+     "sel": "input[name=\"capy_captchakey\"]"
+    },
+    {
+     "sel": "input[name=\"capy_challengekey\"]"
+    },
+    {
+     "sel": "input[name=\"capy_answer\"]"
+    }
+   ]
+  },
+  {
+   "id": "solvemedia",
+   "name": "Solve Media",
+   "vendor": "Solve Media",
+   "kind": "image",
+   "subtype": null,
+   "site": "https://www.solvemedia.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bsolvemedia\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bsolvemedia\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#adcopy-outer"
+    },
+    {
+     "sel": "input[name=\"adcopy_response\"]"
+    },
+    {
+     "sel": "#adcopy_response"
+    },
+    {
+     "sel": "input[name=\"adcopy_challenge\"]"
+    }
+   ]
+  },
+  {
+   "id": "cutcaptcha",
+   "name": "Cutcaptcha",
+   "vendor": "Cutcaptcha",
+   "kind": "widget",
+   "subtype": "puzzle",
+   "site": "https://www.cutcaptcha.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bcutcaptcha\\.(?:net|com)\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bcutcaptcha\\.(?:net|com)\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#puzzle-captcha",
+     "w": 0.7
+    },
+    {
+     "sel": "input[name=\"cap_token\"]",
+     "w": 0.5
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bCUTCAPTCHA_MISERY_KEY\\b",
+     "flags": ""
+    }
+   ]
+  },
+  {
+   "id": "cybersiara",
+   "name": "CyberSiARA",
+   "vendor": "CyberSiARA",
+   "kind": "widget",
+   "subtype": "slider",
+   "site": "https://www.cybersiara.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\b(?:embed\\.)?mycybersiara\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bcybersiara\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".SiaraShield",
+     "w": 0.85
+    },
+    {
+     "sel": "[class*=\"SiaraShield\"]",
+     "w": 0.8
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bSiaraShield\\b|\\bCyberSiara\\b",
+     "flags": "i",
+     "w": 0.4
+    }
+   ]
+  },
+  {
+   "id": "atbcaptcha",
+   "name": "atbCAPTCHA",
+   "vendor": "aisecurius",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://www.aisecurius.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\baisecurius\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\batbCaptcha\\b|\\batb-captcha\\b",
+     "flags": "i",
+     "w": 0.4
+    }
+   ]
+  },
+  {
+   "id": "mcaptcha",
+   "name": "mCaptcha",
+   "vendor": "mCaptcha",
+   "kind": "widget",
+   "subtype": "proof-of-work",
+   "site": "https://mcaptcha.org",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "@mcaptcha\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bmcaptcha\\b",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bmcaptcha\\b",
+     "flags": "i",
+     "w": 0.75
+    },
+    {
+     "re": "\\/widget\\/?\\?sitekey=",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#mcaptcha__widget-container"
+    },
+    {
+     "sel": "[id^=\"mcaptcha\"]",
+     "w": 0.85
+    },
+    {
+     "sel": ".mcaptcha",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "id": "altcha",
+   "name": "ALTCHA",
+   "vendor": "ALTCHA",
+   "kind": "widget",
+   "subtype": "proof-of-work",
+   "site": "https://altcha.org",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "altcha-org\\/altcha",
+     "flags": "i"
+    },
+    {
+     "re": "\\baltcha(?:\\.min)?\\.(?:js|umd\\.cjs)",
+     "flags": "i"
+    },
+    {
+     "re": "\\baltcha\\b",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "elements": [
+    {
+     "sel": "altcha-widget"
+    },
+    {
+     "sel": "input[name=\"altcha\"]",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "id": "cap",
+   "name": "Cap",
+   "vendor": "Cap (open source)",
+   "kind": "widget",
+   "subtype": "proof-of-work",
+   "site": "https://capjs.js.org",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "@cap\\.js\\/widget",
+     "flags": "i"
+    },
+    {
+     "re": "\\bcap(?:\\.min)?\\.js\\b",
+     "flags": "i",
+     "w": 0.3
+    }
+   ],
+   "elements": [
+    {
+     "sel": "cap-widget"
+    },
+    {
+     "sel": "input[name=\"cap-token\"]",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "id": "private-captcha",
+   "name": "Private Captcha",
+   "vendor": "Private Captcha",
+   "kind": "widget",
+   "subtype": "proof-of-work",
+   "site": "https://privatecaptcha.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bprivatecaptcha\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".private-captcha",
+     "w": 0.85
+    },
+    {
+     "sel": "input[name=\"private-captcha-solution\"]",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "trustcaptcha",
+   "name": "TrustCaptcha",
+   "vendor": "TrustComponent",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://www.trustcomponent.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\btrustcomponent\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "@trustcomponent\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "trustcaptcha-component"
+    }
+   ]
+  },
+  {
+   "id": "mosparo",
+   "name": "mosparo",
+   "vendor": "mosparo (open source)",
+   "kind": "widget",
+   "subtype": null,
+   "site": "https://mosparo.io",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "mosparo-frontend(?:\\.min)?\\.js",
+     "flags": "i"
+    },
+    {
+     "re": "\\bmosparo\\b",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".mosparo__container"
+    },
+    {
+     "sel": "[id^=\"mosparo-box\"]",
+     "w": 0.9
+    },
+    {
+     "sel": "[class*=\"mosparo__\"]",
+     "w": 0.85
+    }
+   ]
+  },
+  {
+   "id": "botpoison",
+   "name": "Botpoison",
+   "vendor": "Botpoison",
+   "kind": "invisible",
+   "subtype": "proof-of-work",
+   "site": "https://botpoison.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "@botpoison\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bbotpoison\\.com\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "[data-botpoison-public-key]",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "botdetect",
+   "name": "BotDetect CAPTCHA",
+   "vendor": "Captcha Inc.",
+   "kind": "image",
+   "subtype": null,
+   "site": "https://captcha.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "botdetect",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".BDC_CaptchaDiv"
+    },
+    {
+     "sel": ".BDC_CaptchaImageDiv"
+    },
+    {
+     "sel": "[class*=\"BDC_Captcha\"]",
+     "w": 0.9
+    },
+    {
+     "sel": "img",
+     "attr": [
+      "src"
+     ],
+     "re": "botdetectcaptcha|simple-captcha-endpoint",
+     "flags": "i",
+     "w": 0.95
+    }
+   ]
+  },
+  {
+   "id": "securimage",
+   "name": "Securimage / SI CAPTCHA",
+   "vendor": "Securimage",
+   "kind": "image",
+   "subtype": null,
+   "site": "https://www.phpcaptcha.org",
+   "generic": false,
+   "refine": false,
+   "elements": [
+    {
+     "sel": "img",
+     "attr": [
+      "src",
+      "id"
+     ],
+     "re": "securimage|si_image",
+     "flags": "i",
+     "w": 0.95
+    },
+    {
+     "sel": "input[name=\"captcha_code\"]",
+     "w": 0.45
+    }
+   ]
+  },
+  {
+   "id": "wpcf7-captcha",
+   "name": "Really Simple CAPTCHA (Contact Form 7)",
+   "vendor": "Contact Form 7",
+   "kind": "image",
+   "subtype": null,
+   "site": "https://wordpress.org/plugins/really-simple-captcha/",
+   "generic": false,
+   "refine": false,
+   "elements": [
+    {
+     "sel": ".wpcf7-captchac"
+    },
+    {
+     "sel": ".wpcf7-captchar",
+     "w": 0.9
+    },
+    {
+     "sel": "img",
+     "attr": [
+      "src"
+     ],
+     "re": "wpcf7_captcha",
+     "flags": "i",
+     "w": 0.95
+    }
+   ]
+  },
+  {
+   "id": "wpcf7-quiz",
+   "name": "Contact Form 7 Quiz",
+   "vendor": "Contact Form 7",
+   "kind": "question",
+   "subtype": null,
+   "site": "https://contactform7.com/quiz/",
+   "generic": false,
+   "refine": false,
+   "elements": [
+    {
+     "sel": ".wpcf7-quiz"
+    },
+    {
+     "sel": "input[name=\"_wpcf7_quiz_answer_your-quiz\"]",
+     "w": 0.9
+    },
+    {
+     "sel": ".wpcf7-quiz-label",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "cloudflare-challenge",
+   "name": "Cloudflare challenge page",
+   "vendor": "Cloudflare",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://developers.cloudflare.com/waf/reference/cloudflare-challenges/",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\/cdn-cgi\\/challenge-platform\\/(?:h\\/[a-z]\\/)?orchestrate\\/(?:chl_page|jsch|captcha|managed|chl_api)\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#challenge-form"
+    },
+    {
+     "sel": "#challenge-running"
+    },
+    {
+     "sel": "#challenge-stage"
+    },
+    {
+     "sel": "#challenge-body-text"
+    },
+    {
+     "sel": "#challenge-error-text"
+    },
+    {
+     "sel": "#cf-challenge-running"
+    },
+    {
+     "sel": "#cf-please-wait"
+    },
+    {
+     "sel": ".cf-browser-verification"
+    },
+    {
+     "sel": "#trk_jschal_js"
+    },
+    {
+     "sel": "form",
+     "attr": [
+      "action"
+     ],
+     "re": "__cf_chl_(?:f|jschl|captcha|managed|rt)_tk",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bwindow\\._cf_chl_opt\\b|\\b_cf_chl_opt\\s*=",
+     "flags": "",
+     "w": 0.95
+    },
+    {
+     "re": "\\bcf_chl_(?:prog|jschl_tk|captcha_tk|managed_tk|rc_[im]|f_tk)\\b",
+     "flags": "",
+     "w": 0.9
+    },
+    {
+     "re": "\\bjschl_(?:vc|answer)\\b",
+     "flags": "",
+     "w": 0.9
+    }
+   ],
+   "urls": [
+    {
+     "re": "[?&]__cf_chl_(?:rt|f|jschl|captcha|managed|tk)_tk=",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "title": [
+    {
+     "re": "^just a moment\\.{0,3}$",
+     "flags": "i",
+     "w": 0.8
+    },
+    {
+     "re": "^one more step!? \\| cloudflare$",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "text": [
+    {
+     "re": "checking if the site connection is secure",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "needs to review the security of your connection before proceeding",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "verify you are human by completing the action below",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "checking your browser before accessing",
+     "flags": "i",
+     "w": 0.7
+    },
+    {
+     "re": "ddos protection by cloudflare",
+     "flags": "i",
+     "w": 0.8
+    },
+    {
+     "re": "please complete the security check to access",
+     "flags": "i",
+     "w": 0.75
+    },
+    {
+     "re": "enable javascript and cookies to continue",
+     "flags": "i",
+     "w": 0.6
+    },
+    {
+     "re": "performance (?:&|and) security by cloudflare",
+     "flags": "i",
+     "w": 0.35
+    }
+   ],
+   "headers": [
+    {
+     "name": "cf-mitigated",
+     "re": "challenge",
+     "flags": "i",
+     "w": 0.95
+    },
+    {
+     "name": "server",
+     "re": "cloudflare",
+     "flags": "i",
+     "w": 0.15
+    }
+   ],
+   "status": [
+    403,
+    503,
+    429
+   ]
+  },
+  {
+   "id": "cloudflare-block",
+   "name": "Cloudflare block page",
+   "vendor": "Cloudflare",
+   "kind": "block-page",
+   "subtype": null,
+   "site": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/",
+   "generic": false,
+   "refine": true,
+   "elements": [
+    {
+     "sel": "#cf-error-details"
+    },
+    {
+     "sel": ".cf-error-details"
+    },
+    {
+     "sel": "[data-translate=\"blocked_why_headline\"]"
+    },
+    {
+     "sel": "#cf-wrapper",
+     "w": 0.7
+    }
+   ],
+   "title": [
+    {
+     "re": "attention required! \\| cloudflare",
+     "flags": "i",
+     "w": 0.5
+    },
+    {
+     "re": "access denied \\| .* used cloudflare to restrict access",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "text": [
+    {
+     "re": "sorry, you have been blocked",
+     "flags": "i",
+     "w": 0.75
+    },
+    {
+     "re": "you are unable to access",
+     "flags": "i",
+     "w": 0.55
+    },
+    {
+     "re": "cloudflare ray id",
+     "flags": "i",
+     "w": 0.4
+    }
+   ]
+  },
+  {
+   "id": "google-sorry",
+   "name": "Google unusual traffic page",
+   "vendor": "Google",
+   "kind": "challenge-page",
+   "subtype": "recaptcha",
+   "site": "https://support.google.com/websearch/answer/86640",
+   "generic": false,
+   "refine": false,
+   "elements": [
+    {
+     "sel": "form#captcha-form",
+     "w": 0.7
+    },
+    {
+     "sel": "form",
+     "attr": [
+      "action"
+     ],
+     "re": "\\/sorry\\/index",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\bgoogle\\.[a-z.]+\\/sorry\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "text": [
+    {
+     "re": "our systems have detected unusual traffic from your computer network",
+     "flags": "i",
+     "w": 0.95
+    }
+   ]
+  },
+  {
+   "id": "amazon-captcha",
+   "name": "Amazon robot check",
+   "vendor": "Amazon",
+   "kind": "challenge-page",
+   "subtype": "text-image",
+   "site": "https://www.amazon.com",
+   "generic": false,
+   "refine": false,
+   "elements": [
+    {
+     "sel": "form",
+     "attr": [
+      "action"
+     ],
+     "re": "\\/errors\\/validateCaptcha",
+     "flags": "i",
+     "w": 0.95
+    },
+    {
+     "sel": "img",
+     "attr": [
+      "src"
+     ],
+     "re": "ssl-images-amazon\\.com\\/captcha\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "text": [
+    {
+     "re": "enter the characters you see below",
+     "flags": "i",
+     "w": 0.75
+    },
+    {
+     "re": "type the characters you see in this image",
+     "flags": "i",
+     "w": 0.7
+    },
+    {
+     "re": "sorry, we just need to make sure you(?:'|’)re not a robot",
+     "flags": "i",
+     "w": 0.85
+    }
+   ]
+  },
+  {
+   "id": "datadome",
+   "name": "DataDome",
+   "vendor": "DataDome",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://datadome.co",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bjs\\.datadome\\.co\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bdatadome\\.co\\/",
+     "flags": "i",
+     "w": 0.8
+    },
+    {
+     "re": "\\btags\\.js\\?.*datadome",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bddjskey\\b|\\bddoptions\\b",
+     "flags": "",
+     "w": 0.8
+    }
+   ],
+   "cookies": [
+    {
+     "name": "datadome",
+     "w": 0.7
+    }
+   ],
+   "headers": [
+    {
+     "name": "x-datadome",
+     "re": ".",
+     "flags": "",
+     "w": 0.85
+    },
+    {
+     "name": "x-dd-b",
+     "re": ".",
+     "flags": "",
+     "w": 0.7
+    },
+    {
+     "name": "x-datadome-cid",
+     "re": ".",
+     "flags": "",
+     "w": 0.85
+    }
+   ]
+  },
+  {
+   "id": "datadome-captcha",
+   "name": "DataDome captcha",
+   "vendor": "DataDome",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://datadome.co",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bct\\.captcha-delivery\\.com\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bcaptcha-delivery\\.com\\/",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bgeo\\.captcha-delivery\\.com\\/(?:captcha|interstitial)\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\bcaptcha-delivery\\.com\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "elements": [
+    {
+     "sel": "iframe[title*=\"DataDome\" i]",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bvar dd\\s*=\\s*\\{[^}]*['\"]?(?:rt|cid|hsh)['\"]?\\s*:",
+     "flags": "",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "perimeterx",
+   "name": "HUMAN (PerimeterX)",
+   "vendor": "HUMAN Security",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://www.humansecurity.com",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bclient\\.(?:perimeterx\\.net|px-cdn\\.net|px-cloud\\.net)\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\b(?:collector-)?px[a-z0-9]*\\.(?:perimeterx\\.net|px-cdn\\.net|px-cloud\\.net)\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\/px[a-z0-9]{6,10}\\/init\\.js",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "\\bperimeterx\\.net\\/",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bwindow\\._pxAppId\\s*=|\\b_pxAppId\\s*=",
+     "flags": "",
+     "w": 0.85
+    }
+   ],
+   "cookies": [
+    {
+     "name": "_px3",
+     "w": 0.65
+    },
+    {
+     "name": "_pxhd",
+     "w": 0.6
+    },
+    {
+     "name": "_pxvid",
+     "w": 0.6
+    },
+    {
+     "name": "pxcts",
+     "w": 0.5
+    },
+    {
+     "name": "_pxff_",
+     "w": 0.5
+    }
+   ]
+  },
+  {
+   "id": "perimeterx-captcha",
+   "name": "HUMAN (PerimeterX) press & hold",
+   "vendor": "HUMAN Security",
+   "kind": "challenge-page",
+   "subtype": "press-and-hold",
+   "site": "https://www.humansecurity.com",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bcaptcha\\.(?:px-cdn|px-cloud)\\.net\\/",
+     "flags": "i"
+    },
+    {
+     "re": "\\/captcha\\/captcha\\.js\\?a=c",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\bcaptcha\\.(?:px-cdn|px-cloud)\\.net\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#px-captcha"
+    },
+    {
+     "sel": "#px-captcha-wrapper"
+    },
+    {
+     "sel": ".px-captcha-container"
+    },
+    {
+     "sel": "[id^=\"px-captcha\"]",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\b_pxCaptcha|\\bwindow\\._pxBlockedUrl\\b|\\b_pxUuid\\s*=",
+     "flags": "",
+     "w": 0.8
+    }
+   ],
+   "title": [
+    {
+     "re": "^access to this page has been denied\\.?$",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "text": [
+    {
+     "re": "press (?:&|and) hold to confirm you are(?: a)? human",
+     "flags": "i",
+     "w": 0.9
+    },
+    {
+     "re": "press (?:&|and) hold",
+     "flags": "i",
+     "w": 0.5
+    }
+   ]
+  },
+  {
+   "id": "akamai-bot-manager",
+   "name": "Akamai Bot Manager",
+   "vendor": "Akamai",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://www.akamai.com/products/bot-manager",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\/akam\\/\\d+\\/[a-z0-9]+",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bbmak\\.(?:js_post|sensor_data|startTracking)\\b",
+     "flags": "",
+     "w": 0.8
+    }
+   ],
+   "cookies": [
+    {
+     "name": "_abck",
+     "w": 0.7
+    },
+    {
+     "name": "bm_sz",
+     "w": 0.65
+    },
+    {
+     "name": "ak_bmsc",
+     "w": 0.6
+    },
+    {
+     "name": "bm_sv",
+     "w": 0.5
+    },
+    {
+     "name": "bm_mi",
+     "w": 0.5
+    }
+   ]
+  },
+  {
+   "id": "akamai-challenge",
+   "name": "Akamai challenge page",
+   "vendor": "Akamai",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://www.akamai.com/products/bot-manager",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\/_sec\\/cp_challenge\\/",
+     "flags": "i"
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\/_sec\\/cp_challenge\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#sec-if-cpt-container"
+    },
+    {
+     "sel": "#sec-cpt-if"
+    },
+    {
+     "sel": "#sec-text-container",
+     "w": 0.8
+    },
+    {
+     "sel": "#sec-container",
+     "w": 0.6
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\/_sec\\/(?:cp_challenge|verify)",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "\\bsec-if-cpt\\b|\\bsec_cpt\\b",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "text": [
+    {
+     "re": "powered and protected by akamai",
+     "flags": "i",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "akamai-block",
+   "name": "Akamai access denied",
+   "vendor": "Akamai",
+   "kind": "block-page",
+   "subtype": null,
+   "site": "https://www.akamai.com",
+   "generic": false,
+   "refine": true,
+   "elements": [
+    {
+     "sel": "a",
+     "attr": [
+      "href"
+     ],
+     "re": "errors\\.edgesuite\\.net",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "title": [
+    {
+     "re": "^access denied$",
+     "flags": "i",
+     "w": 0.45
+    }
+   ],
+   "text": [
+    {
+     "re": "you don(?:'|’)t have permission to access",
+     "flags": "i",
+     "w": 0.6
+    },
+    {
+     "re": "reference\\s*#\\s*\\d+\\.[0-9a-f]+\\.\\d+\\.[0-9a-f]+",
+     "flags": "i",
+     "w": 0.9
+    },
+    {
+     "re": "errors\\.edgesuite\\.net",
+     "flags": "i",
+     "w": 0.9,
+     "any": true
+    }
+   ],
+   "headers": [
+    {
+     "name": "server",
+     "re": "akamaighost",
+     "flags": "i",
+     "w": 0.35
+    }
+   ]
+  },
+  {
+   "id": "imperva",
+   "name": "Imperva (Incapsula)",
+   "vendor": "Imperva",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://www.imperva.com/products/advanced-bot-protection-management/",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\/_Incapsula_Resource\\?",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "cookies": [
+    {
+     "name": "incap_ses_",
+     "w": 0.65
+    },
+    {
+     "name": "visid_incap_",
+     "w": 0.65
+    },
+    {
+     "name": "nlbi_",
+     "w": 0.4
+    },
+    {
+     "name": "reese84",
+     "w": 0.7
+    }
+   ],
+   "headers": [
+    {
+     "name": "x-iinfo",
+     "re": ".",
+     "flags": "",
+     "w": 0.7
+    },
+    {
+     "name": "x-cdn",
+     "re": "imperva|incapsula",
+     "flags": "i",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "id": "imperva-challenge",
+   "name": "Imperva (Incapsula) challenge page",
+   "vendor": "Imperva",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://www.imperva.com",
+   "generic": false,
+   "refine": false,
+   "frames": [
+    {
+     "re": "\\/_Incapsula_Resource\\?",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "elements": [
+    {
+     "sel": "iframe",
+     "attr": [
+      "src"
+     ],
+     "re": "_Incapsula_Resource",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "_Incapsula_Resource\\?SWUDNSAI",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "text": [
+    {
+     "re": "request unsuccessful\\.? incapsula incident id",
+     "flags": "i",
+     "w": 0.9
+    },
+    {
+     "re": "incapsula incident id",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "additional security check is required",
+     "flags": "i",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "imperva-abp",
+   "name": "Imperva Advanced Bot Protection (Distil)",
+   "vendor": "Imperva",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://www.imperva.com/products/advanced-bot-protection-management/",
+   "generic": false,
+   "refine": false,
+   "inline": [
+    {
+     "re": "\\bdistil_(?:r_captcha|r_blocked|identify_cookie)\\b",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "title": [
+    {
+     "re": "^pardon our interruption\\.{0,3}$",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "text": [
+    {
+     "re": "something about your browser made us think you were a bot",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "cookies": [
+    {
+     "re": "^D_(?:IID|UID|ZID|ZUID|HID|SID)$",
+     "flags": "",
+     "w": 0.45
+    }
+   ]
+  },
+  {
+   "id": "kasada",
+   "name": "Kasada",
+   "vendor": "Kasada",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://www.kasada.io",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/(?:ips|p)\\.js",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bKPSDK\\b",
+     "flags": "",
+     "w": 0.85
+    }
+   ],
+   "cookies": [
+    {
+     "name": "KP_UIDz",
+     "w": 0.6
+    },
+    {
+     "name": "KP_UIDz-ssn",
+     "w": 0.6
+    }
+   ],
+   "headers": [
+    {
+     "name": "x-kpsdk-ct",
+     "re": ".",
+     "flags": "",
+     "w": 0.8
+    },
+    {
+     "name": "x-kpsdk-cd",
+     "re": ".",
+     "flags": "",
+     "w": 0.7
+    },
+    {
+     "name": "x-kpsdk-v",
+     "re": ".",
+     "flags": "",
+     "w": 0.7
+    },
+    {
+     "name": "x-kpsdk-r",
+     "re": ".",
+     "flags": "",
+     "w": 0.7
+    }
+   ]
+  },
+  {
+   "id": "f5-asm",
+   "name": "F5 BIG-IP ASM",
+   "vendor": "F5",
+   "kind": "block-page",
+   "subtype": null,
+   "site": "https://www.f5.com/products/big-ip-services/advanced-waf",
+   "generic": false,
+   "refine": true,
+   "text": [
+    {
+     "re": "the requested url was rejected\\.? please consult with your administrator",
+     "flags": "i",
+     "w": 0.95
+    },
+    {
+     "re": "your support id is:?\\s*\\d+",
+     "flags": "i",
+     "w": 0.6
+    },
+    {
+     "re": "what code is in the image\\??",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "cookies": [
+    {
+     "re": "^TS[0-9a-f]{6,8}(?:_\\d+)?$",
+     "flags": "",
+     "w": 0.35
+    }
+   ]
+  },
+  {
+   "id": "sucuri",
+   "name": "Sucuri Website Firewall",
+   "vendor": "Sucuri",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://sucuri.net/website-firewall/",
+   "generic": false,
+   "refine": true,
+   "inline": [
+    {
+     "re": "\\bsucuri_cloudproxy_js\\b",
+     "flags": "",
+     "w": 0.95
+    }
+   ],
+   "title": [
+    {
+     "re": "sucuri website firewall",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "text": [
+    {
+     "re": "sucuri website firewall",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "cookies": [
+    {
+     "name": "sucuri_cloudproxy_uuid_",
+     "w": 0.5
+    }
+   ],
+   "headers": [
+    {
+     "name": "x-sucuri-id",
+     "re": ".",
+     "flags": "",
+     "w": 0.7
+    },
+    {
+     "name": "x-sucuri-cache",
+     "re": ".",
+     "flags": "",
+     "w": 0.5
+    },
+    {
+     "name": "server",
+     "re": "sucuri|cloudproxy",
+     "flags": "i",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "ddos-guard",
+   "name": "DDoS-Guard",
+   "vendor": "DDoS-Guard",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://ddos-guard.net",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bcheck\\.ddos-guard\\.net\\/",
+     "flags": "i",
+     "w": 0.95
+    },
+    {
+     "re": "\\/\\.well-known\\/ddos-guard\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#ddg-captcha",
+     "w": 0.85
+    },
+    {
+     "sel": "[id^=\"ddg-\"]",
+     "w": 0.5
+    }
+   ],
+   "title": [
+    {
+     "re": "^ddos-guard$",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "cookies": [
+    {
+     "name": "__ddg1_",
+     "w": 0.55
+    },
+    {
+     "name": "__ddg2_",
+     "w": 0.55
+    },
+    {
+     "name": "__ddgid_",
+     "w": 0.55
+    },
+    {
+     "name": "__ddgmark_",
+     "w": 0.55
+    },
+    {
+     "name": "__ddg_",
+     "w": 0.5
+    }
+   ],
+   "headers": [
+    {
+     "name": "server",
+     "re": "ddos-guard",
+     "flags": "i",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "qrator",
+   "name": "Qrator",
+   "vendor": "Qrator Labs",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://qrator.net",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\/__qrator\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "headers": [
+    {
+     "name": "server",
+     "re": "qrator",
+     "flags": "i",
+     "w": 0.7
+    }
+   ]
+  },
+  {
+   "id": "stormwall",
+   "name": "StormWall",
+   "vendor": "StormWall",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://stormwall.network",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bstormwall\\.pro\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\bstormwall\\b",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "title": [
+    {
+     "re": "stormwall",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "cookies": [
+    {
+     "name": "swp_token",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "reblaze",
+   "name": "Reblaze",
+   "vendor": "Reblaze",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://www.reblaze.com",
+   "generic": false,
+   "refine": true,
+   "inline": [
+    {
+     "re": "\\brbzns\\b",
+     "flags": "",
+     "w": 0.75
+    }
+   ],
+   "cookies": [
+    {
+     "name": "rbzid",
+     "w": 0.7
+    },
+    {
+     "name": "rbzsessionid",
+     "w": 0.6
+    }
+   ],
+   "headers": [
+    {
+     "name": "server",
+     "re": "reblaze",
+     "flags": "i",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "id": "radware",
+   "name": "Radware Bot Manager (ShieldSquare)",
+   "vendor": "Radware",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://www.radware.com/products/bot-manager/",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\b(?:cdn|validate)\\.perfdrive\\.com\\/",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\bvalidate\\.perfdrive\\.com\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "title": [
+    {
+     "re": "radware bot manager captcha",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "text": [
+    {
+     "re": "radware bot manager",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "cookies": [
+    {
+     "name": "__uzma",
+     "w": 0.5
+    },
+    {
+     "name": "__uzmb",
+     "w": 0.5
+    },
+    {
+     "name": "__uzmc",
+     "w": 0.5
+    },
+    {
+     "name": "__uzmd",
+     "w": 0.5
+    },
+    {
+     "name": "__ssds",
+     "w": 0.45
+    }
+   ]
+  },
+  {
+   "id": "netacea",
+   "name": "Netacea",
+   "vendor": "Netacea",
+   "kind": "protection",
+   "subtype": null,
+   "site": "https://netacea.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\bnetacea\\.com\\/",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "cookies": [
+    {
+     "re": "^_mitata",
+     "flags": "",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "vercel-challenge",
+   "name": "Vercel Security Checkpoint",
+   "vendor": "Vercel",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://vercel.com/docs/vercel-firewall",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\/\\.well-known\\/vercel\\/security\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "title": [
+    {
+     "re": "vercel security checkpoint",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "text": [
+    {
+     "re": "we(?:'|’)re verifying your browser",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "headers": [
+    {
+     "name": "x-vercel-mitigated",
+     "re": "challenge",
+     "flags": "i",
+     "w": 0.95
+    }
+   ]
+  },
+  {
+   "id": "anubis",
+   "name": "Anubis",
+   "vendor": "Techaro (open source)",
+   "kind": "challenge-page",
+   "subtype": "proof-of-work",
+   "site": "https://anubis.techaro.lol",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\/\\.within\\.website\\/x\\/cmd\\/anubis\\/",
+     "flags": "i"
+    }
+   ],
+   "elements": [
+    {
+     "sel": "#anubis_challenge"
+    },
+    {
+     "sel": "#anubis_version"
+    },
+    {
+     "sel": "[id^=\"anubis_\"]",
+     "w": 0.8
+    }
+   ],
+   "title": [
+    {
+     "re": "making sure you(?:'|’)re not a bot!?",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "text": [
+    {
+     "re": "protected by anubis",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "cookies": [
+    {
+     "re": "anubis-auth",
+     "flags": "i",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "sg-captcha",
+   "name": "SiteGround SG-Captcha",
+   "vendor": "SiteGround",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://www.siteground.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "\\/\\.well-known\\/sgcaptcha\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "frames": [
+    {
+     "re": "\\/\\.well-known\\/sgcaptcha\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\.well-known\\/sgcaptcha",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\/\\.well-known\\/sgcaptcha\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "title": [
+    {
+     "re": "robot challenge screen",
+     "flags": "i",
+     "w": 0.7
+    }
+   ]
+  },
+  {
+   "id": "litespeed-recaptcha",
+   "name": "LiteSpeed reCAPTCHA",
+   "vendor": "LiteSpeed",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://docs.litespeedtech.com/lsws/cp/cpanel/antibot/",
+   "generic": false,
+   "refine": false,
+   "elements": [
+    {
+     "sel": "form",
+     "attr": [
+      "action"
+     ],
+     "re": "\\.lsrecap",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "inline": [
+    {
+     "re": "\\/\\.lsrecap\\/recaptcha",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\/\\.lsrecap\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ]
+  },
+  {
+   "id": "imunify360",
+   "name": "Imunify360 bot protection",
+   "vendor": "CloudLinux",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://www.imunify360.com",
+   "generic": false,
+   "refine": false,
+   "scripts": [
+    {
+     "re": "imunify360",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "title": [
+    {
+     "re": "imunify360",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "text": [
+    {
+     "re": "access denied by imunify360 bot-protection",
+     "flags": "i",
+     "w": 0.95
+    },
+    {
+     "re": "imunify360",
+     "flags": "i",
+     "w": 0.7
+    }
+   ]
+  },
+  {
+   "id": "bitninja",
+   "name": "BitNinja captcha",
+   "vendor": "BitNinja",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://bitninja.com",
+   "generic": false,
+   "refine": false,
+   "title": [
+    {
+     "re": "bitninja",
+     "flags": "i",
+     "w": 0.75
+    }
+   ],
+   "text": [
+    {
+     "re": "security check by bitninja",
+     "flags": "i",
+     "w": 0.95
+    },
+    {
+     "re": "bitninja",
+     "flags": "i",
+     "w": 0.65
+    }
+   ]
+  },
+  {
+   "id": "wordfence",
+   "name": "Wordfence block page",
+   "vendor": "Defiant",
+   "kind": "block-page",
+   "subtype": null,
+   "site": "https://www.wordfence.com",
+   "generic": false,
+   "refine": false,
+   "text": [
+    {
+     "re": "your access to this site has been limited by the site owner",
+     "flags": "i",
+     "w": 0.9
+    },
+    {
+     "re": "generated by wordfence",
+     "flags": "i",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "id": "yandex-showcaptcha",
+   "name": "Yandex robot check",
+   "vendor": "Yandex",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://yandex.com/support/captcha/",
+   "generic": false,
+   "refine": false,
+   "elements": [
+    {
+     "sel": ".CheckboxCaptcha"
+    },
+    {
+     "sel": ".AdvancedCaptcha"
+    },
+    {
+     "sel": "#checkbox-captcha-form"
+    },
+    {
+     "sel": "form",
+     "attr": [
+      "action"
+     ],
+     "re": "\\/checkcaptcha",
+     "flags": "i",
+     "w": 0.9
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\/(?:showcaptcha|checkcaptcha)\\b",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "text": [
+    {
+     "re": "подтвердите,? что запросы отправляли вы,? а не робот",
+     "flags": "i",
+     "w": 0.9
+    },
+    {
+     "re": "please confirm that you and not a robot are sending requests",
+     "flags": "i",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "vk-captcha",
+   "name": "VK captcha",
+   "vendor": "VK",
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": "https://vk.com",
+   "generic": false,
+   "refine": true,
+   "elements": [
+    {
+     "sel": "img",
+     "attr": [
+      "src"
+     ],
+     "re": "\\bvk\\.com\\/captcha\\.php|\\/captcha\\.php\\?sid=",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\bid\\.vk\\.com\\/not_robot_captcha|\\/not_robot_captcha\\b",
+     "flags": "i",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "baidu-captcha",
+   "name": "Baidu security check",
+   "vendor": "Baidu",
+   "kind": "widget",
+   "subtype": "rotate",
+   "site": "https://www.baidu.com",
+   "generic": false,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "\\bwappass\\.baidu\\.com\\/static\\/captcha",
+     "flags": "i",
+     "w": 0.9
+    },
+    {
+     "re": "\\bppui-static-(?:pc|wap)\\.cdn\\.bcebos\\.com\\/.*captcha",
+     "flags": "i",
+     "w": 0.85
+    }
+   ],
+   "elements": [
+    {
+     "sel": ".passMod_spin-wrap"
+    },
+    {
+     "sel": ".vcode-spin",
+     "w": 0.85
+    },
+    {
+     "sel": "[class*=\"vcode-spin\"]",
+     "w": 0.8
+    }
+   ],
+   "urls": [
+    {
+     "re": "\\bwappass\\.baidu\\.com\\/static\\/captcha\\/",
+     "flags": "i",
+     "w": 0.95
+    }
+   ],
+   "text": [
+    {
+     "re": "百度安全验证",
+     "flags": "",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "id": "generic-image-captcha",
+   "name": "Image captcha",
+   "vendor": null,
+   "kind": "image",
+   "subtype": "text-image",
+   "site": null,
+   "generic": true,
+   "refine": true,
+   "elements": [
+    {
+     "sel": "img",
+     "attr": [
+      "src",
+      "id",
+      "class",
+      "alt",
+      "name",
+      "title"
+     ],
+     "re": "captch|kaptcha|check_?code|verif(?:y|ication)_?(?:code|img|image|pic)|valid(?:ate)?_?code|(?:^|[^a-z])v_?code|secur(?:e|ity)_?code_?img|auth_?code|image_?code|img_?code|pic_?code|rand_?code|(?:^|[^a-z])yzm(?:[^a-z]|$)|securimage",
+     "flags": "i",
+     "w": 0.75
+    },
+    {
+     "sel": "canvas",
+     "attr": [
+      "id",
+      "class"
+     ],
+     "re": "captch|verif(?:y|ication)_?code|check_?code",
+     "flags": "i",
+     "w": 0.7
+    },
+    {
+     "sel": "input:not([type=\"hidden\"])",
+     "attr": [
+      "name",
+      "id",
+      "placeholder",
+      "aria-label",
+      "class"
+     ],
+     "re": "captch|kaptcha|check_?code|verif(?:y|ication)_?code|valid(?:ate)?_?code|(?:^|[^a-z])v_?code|image_?code|img_?code|pic_?code|auth_?code|(?:^|[^a-z])yzm(?:[^a-z]|$)|验证码|驗證碼|認証コード|画像認証|보안 ?문자|자동입력",
+     "flags": "i",
+     "w": 0.45
+    }
+   ],
+   "text": [
+    {
+     "re": "(?:enter|type) the (?:characters|code|text|letters|numbers|word)s? (?:you see|shown|displayed|in the (?:image|picture|box))|图形验证码|图片验证码|看不清[，,]?换一张|画像に表示されている文字",
+     "flags": "i",
+     "w": 0.6,
+     "any": true
+    }
+   ]
+  },
+  {
+   "id": "generic-question",
+   "name": "Question / math captcha",
+   "vendor": null,
+   "kind": "question",
+   "subtype": null,
+   "site": null,
+   "generic": true,
+   "refine": true,
+   "elements": [
+    {
+     "sel": "input:not([type=\"hidden\"])",
+     "attr": [
+      "name",
+      "id",
+      "class",
+      "placeholder",
+      "aria-label"
+     ],
+     "re": "captch|quiz|math|(?:^|[^a-z])sum(?:[^a-z]|$)|security_?(?:question|answer)|antispam|anti-spam|human",
+     "flags": "i",
+     "w": 0.5
+    },
+    {
+     "sel": "input:not([type=\"hidden\"])",
+     "attr": [
+      "name",
+      "id"
+     ],
+     "re": "text_?captcha|captcha_?(?:answer|question|text)|question_?captcha",
+     "flags": "i",
+     "w": 0.6
+    }
+   ],
+   "text": [
+    {
+     "re": "(?:what is|what's|solve|calculate|how much is|wie viel ist|cuánto es|combien font)\\s*:?\\s*\\d{1,3}\\s*(?:\\+|plus|-|minus|−|×|x|\\*|times)\\s*\\d{1,3}\\s*(?:=\\s*)?\\??",
+     "flags": "i",
+     "w": 0.6,
+     "any": true
+    },
+    {
+     "re": "\\b\\d{1,3}\\s*(?:\\+|−|-|×|x|\\*)\\s*\\d{1,3}\\s*=\\s*(?:\\?|_{2,})",
+     "flags": "i",
+     "w": 0.55,
+     "any": true
+    }
+   ]
+  },
+  {
+   "id": "generic-slider",
+   "name": "Slider captcha",
+   "vendor": null,
+   "kind": "widget",
+   "subtype": "slider",
+   "site": null,
+   "generic": true,
+   "refine": true,
+   "elements": [
+    {
+     "sel": "div",
+     "attr": [
+      "class",
+      "id"
+     ],
+     "re": "slider[-_]?captcha|captcha[-_]?slider|slide[-_]?verify|verify[-_]?slide|slide[-_]?captcha|drag[-_]?verify|puzzle[-_]?captcha",
+     "flags": "i",
+     "w": 0.8
+    }
+   ],
+   "text": [
+    {
+     "re": "slide to (?:verify|complete|unlock)|drag the slider|drag the (?:puzzle )?piece|拖动(?:下方)?滑块|向右(?:拖动|滑动)|完成拼图|スライドして認証",
+     "flags": "i",
+     "w": 0.55,
+     "any": true
+    },
+    {
+     "re": "select all (?:images|squares|pictures) with|rotate the (?:image|picture|object) (?:to|until)|click (?:on )?the (?:images?|objects?|icons?) in (?:the )?(?:following|this) order",
+     "flags": "i",
+     "w": 0.45,
+     "any": true
+    }
+   ]
+  },
+  {
+   "id": "generic-captcha",
+   "name": "Captcha (unknown provider)",
+   "vendor": null,
+   "kind": "widget",
+   "subtype": null,
+   "site": null,
+   "generic": true,
+   "refine": true,
+   "scripts": [
+    {
+     "re": "captcha",
+     "flags": "i",
+     "w": 0.4
+    }
+   ],
+   "frames": [
+    {
+     "re": "captcha",
+     "flags": "i",
+     "w": 0.7
+    }
+   ],
+   "elements": [
+    {
+     "sel": "iframe[title*=\"captcha\" i]",
+     "w": 0.7
+    },
+    {
+     "sel": "div",
+     "attr": [
+      "id",
+      "class"
+     ],
+     "re": "captcha",
+     "flags": "i",
+     "w": 0.4
+    },
+    {
+     "sel": "form",
+     "attr": [
+      "id",
+      "class",
+      "name",
+      "action"
+     ],
+     "re": "captcha",
+     "flags": "i",
+     "w": 0.45
+    },
+    {
+     "sel": "input:not([type=\"hidden\"])",
+     "attr": [
+      "name",
+      "id"
+     ],
+     "re": "captcha",
+     "flags": "i",
+     "w": 0.45
+    },
+    {
+     "sel": "img",
+     "attr": [
+      "src",
+      "id",
+      "class"
+     ],
+     "re": "captcha",
+     "flags": "i",
+     "w": 0.4
+    },
+    {
+     "sel": "canvas",
+     "attr": [
+      "id",
+      "class"
+     ],
+     "re": "captcha",
+     "flags": "i",
+     "w": 0.45
+    }
+   ]
+  },
+  {
+   "id": "generic-challenge",
+   "name": "Bot check page",
+   "vendor": null,
+   "kind": "challenge-page",
+   "subtype": null,
+   "site": null,
+   "generic": true,
+   "refine": true,
+   "title": [
+    {
+     "re": "^(?:security check|security verification|bot check|bot verification|human verification|verify(?:ing)? (?:you are |that you are )?(?:a )?human|are you (?:a )?(?:human|robot)\\??|captcha|robot check|access check|client challenge|checking your browser|ddos protection|安全验证|安全驗證|人机验证|人機驗證|验证码|驗證碼|проверка|robot challenge screen)\\b",
+     "flags": "i",
+     "w": 0.55
+    }
+   ],
+   "text": [
+    {
+     "re": "\\b(?:verify(?:ing)? (?:that )?you(?:'|’)?re? (?:a )?human|verify you are (?:a )?human|are you (?:a )?(?:human|robot)\\b|i(?:'|’)?m not a robot|i am not a robot|confirm (?:that )?you(?:'|’)?re? (?:a )?human|confirm you are (?:a )?human|prove (?:that )?you(?:'|’)?re? (?:a )?human|human verification|bot (?:check|verification)|making sure you(?:'|’)re not a bot|checking (?:your|the) browser|please (?:complete|solve) the (?:security )?(?:check|captcha|challenge|puzzle)|complete the security check|press (?:&|and) hold|unusual traffic|automated (?:queries|requests))",
+     "flags": "i",
+     "w": 0.6
+    },
+    {
+     "re": "no soy un robot|verifica(?:r)? que (?:eres|es) (?:un )?humano|comprobando (?:su|tu) navegador|je ne suis pas un robot|v[ée]rifi(?:ez|er|cation) que vous [êe]tes (?:un )?humain|ich bin kein roboter|best[äa]tigen sie,? dass sie ein mensch sind|n[ãa]o sou um rob[ôo]|confirme que (?:voc[êe] )?[ée] humano|non sono un robot|я не робот|подтвердите,? что (?:вы )?(?:не робот|человек)|проверка (?:браузера|безопасности)|我不是机器人|我不是機器人|人机验证|人機驗證|请完成(?:安全)?验证|請完成(?:安全)?驗證|ロボットではありません|로봇이 아닙니다|tôi không phải là người máy|xác minh (?:rằng )?bạn là (?:con )?người|ben robot değilim|nie jestem robotem|ik ben geen robot|saya bukan robot|أنا لست روبوت|मैं रोबोट नहीं हूं",
+     "flags": "i",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "id": "generic-block",
+   "name": "Access denied page",
+   "vendor": null,
+   "kind": "block-page",
+   "subtype": null,
+   "site": null,
+   "generic": true,
+   "refine": true,
+   "title": [
+    {
+     "re": "^(?:access denied|403 forbidden|forbidden|blocked|request rejected|you have been blocked|error 10(?:0[0-9]|1[0-9]|20))\\b",
+     "flags": "i",
+     "w": 0.55
+    }
+   ],
+   "text": [
+    {
+     "re": "\\b(?:access (?:to this (?:page|site|resource|website) )?(?:has been |is )?denied|you(?: have|(?:'|’)ve) been blocked|your (?:ip|ip address|request|access|connection) (?:has been|was|is) (?:blocked|denied|restricted)|request (?:blocked|rejected)|this request was blocked)\\b",
+     "flags": "i",
+     "w": 0.55
+    }
+   ],
+   "status": [
+    403,
+    429
+   ]
+  }
+ ]
+}
