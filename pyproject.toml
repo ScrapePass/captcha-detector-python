@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "captcha-detector"
-version = "1.0.1"
+version = "1.0.2"
 description = "Does this web page have a captcha? Detects 69 captcha and bot-check products (reCAPTCHA, hCaptcha, Turnstile, DataDome, PerimeterX...) in HTML, scraper API results, Playwright and Selenium. Zero dependencies."
 readme = "README.md"
 license = { text = "MIT" }

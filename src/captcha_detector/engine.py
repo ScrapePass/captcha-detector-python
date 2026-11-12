@@ -12,7 +12,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from . import refine as _refine
 
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 
 CAPTCHA_KINDS = {"widget", "invisible", "image", "question", "challenge-page"}
 TYPES = ["scripts", "frames", "elements", "inline", "globals", "urls", "title", "text", "cookies", "headers", "status"]

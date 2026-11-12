@@ -110,7 +110,7 @@ A `dict` (so `json.dumps` works) whose keys can also be read as attributes:
       "site": "https://developers.google.com/recaptcha",
   }],
   "summary": "Captcha found: reCAPTCHA (v2-checkbox)",
-  "url": "https://shop.example/", "mode": "html", "version": "1.0.1",
+  "url": "https://shop.example/", "mode": "html", "version": "1.0.2",
 }
 ```
 

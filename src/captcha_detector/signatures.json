@@ -1,5 +1,5 @@
 {
- "version": "1.0.0",
+ "version": "1.0.1",
  "signatures": [
   {
    "id": "recaptcha",
@@ -1691,7 +1691,7 @@
      "attr": [
       "action"
      ],
-     "re": "\\/errors\\/validateCaptcha",
+     "re": "\\/errors(?:_page)?\\/validateCaptcha",
      "flags": "i",
      "w": 0.95
     },
@@ -1718,6 +1718,11 @@
     },
     {
      "re": "sorry, we just need to make sure you(?:'|’)re not a robot",
+     "flags": "i",
+     "w": 0.85
+    },
+    {
+     "re": "click the button below to continue shopping",
      "flags": "i",
      "w": 0.85
     }

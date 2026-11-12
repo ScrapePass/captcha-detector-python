@@ -1,4 +1,4 @@
-/*! captcha-detector v1.0.0 | MIT License | https://github.com/ScrapePass/captcha-detector */
+/*! captcha-detector v1.0.1 | MIT License | https://github.com/ScrapePass/captcha-detector */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else if (typeof define === 'function' && define.amd) define([], factory);
@@ -681,8 +681,9 @@ const SIGNATURES = [
     kind: 'challenge-page',
     subtype: 'text-image',
     site: 'https://www.amazon.com',
-    elements: [{ sel: 'form', attr: ['action'], re: /\/errors\/validateCaptcha/i, w: 0.95 }, { sel: 'img', attr: ['src'], re: /ssl-images-amazon\.com\/captcha\//i, w: 0.9 }],
-    text: [[/enter the characters you see below/i, 0.75], [/type the characters you see in this image/i, 0.7], [/sorry, we just need to make sure you(?:'|’)re not a robot/i, 0.85]],
+    // The form posts to /errors/validateCaptcha, or /errors_page/validateCaptcha on the "continue shopping" page (2025).
+    elements: [{ sel: 'form', attr: ['action'], re: /\/errors(?:_page)?\/validateCaptcha/i, w: 0.95 }, { sel: 'img', attr: ['src'], re: /ssl-images-amazon\.com\/captcha\//i, w: 0.9 }],
+    text: [[/enter the characters you see below/i, 0.75], [/type the characters you see in this image/i, 0.7], [/sorry, we just need to make sure you(?:'|’)re not a robot/i, 0.85], [/click the button below to continue shopping/i, 0.85]],
   },
   {
     id: 'datadome',
@@ -1258,7 +1259,7 @@ const SIGNATURES = [
 ];
 
 
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 
 /** Kinds that mean "there is a captcha / human check on this page". */
 const CAPTCHA_KINDS = { widget: 1, invisible: 1, image: 1, question: 1, 'challenge-page': 1 };
